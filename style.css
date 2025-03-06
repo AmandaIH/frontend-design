@@ -1,12 +1,81 @@
 :root {
-    --color-heading: #0B0D19;
-    --color-body: #677386;
-    --color-bg-button: #3D7BFA;
-    --color-text-button: #FFF;
+  --color-heading: #0b0d19;
+  --color-body: #677386;
+  --color-bg-button: #3d7bfa;
+  --color-text-button: #fff;
 
-    /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
-    --hide-overlay: 0;
+  /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
+  --hide-overlay: 1;
 }
 
-
 /* Begynd her... */
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+h1 {
+  color: var(--color-heading);
+  font-size: 3rem;
+}
+
+p {
+  color: black;
+}
+
+.firstcolumn {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.5rem;
+}
+
+button {
+  background-color: var(--color-bg-button);
+  color: var(--color-text-button);
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+}
+
+.secondcolumn {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(4);
+  gap: 0.75rem;
+  padding-right: 0.5rem;
+}
+.secondcolumn img {
+  object-fit: cover;
+  display: block;
+  border-radius: 0.75rem;
+}
+
+.one {
+  grid-column: 2 / 3;
+  grid-row: 1;
+}
+.two {
+  grid-column: 1 / 2;
+  grid-row: 2;
+}
+.three {
+  grid-column: 2 / 3;
+  grid-row: 2 / 4;
+}
+.four {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+.five {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+.six {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+.seven {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+}
