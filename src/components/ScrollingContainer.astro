@@ -15,31 +15,53 @@ const { cardContent } = Astro.props;
 
 <style>
 ul {
-  display: flex;
+  grid-column: 1 / -1;
   gap: var(--card-gap, 2rem); 
+  
+  /* scroll-snap-type: inline mandatory; */
+
+  display: flex;
   overflow-x: auto;
-  padding-left: calc((100vw - var(--content-width)) / 2); 
-  margin-left: calc((100vw - var(--content-width)) / -2); 
-  width: 100vw; 
-  scrollbar-width: none;
-  position: relative;
+
+  padding-inline: max(20px, 50% - var(--content-width) / 2);
+
   list-style: none; 
 }
 
-ul::-webkit-scrollbar {
-  display: none; 
-}
-
 li {
-  flex: 0 0 auto;
-  width: 400px; 
-  height: auto; 
+  flex-basis: min(90%, 400px);
+  flex-shrink: 0;
+
+  /* scroll-snap-align: center; */
+
   background: var(--card-background);
   color: var(--card-text-color);
   padding: var(--card-padding);
   border-radius: var(--card-border-radius);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; 
+ 
 }
+
+/* ul {
+grid-column: 1 / -1;
+scroll-snap-type: inline mandatory;
+
+display: flex;
+overflow-x: auto;
+
+padding-inline: max(20px, 50% - var(--content-width) / 2);
+} 
+
+li {
+flex-basis: min(90%, 400px);
+flex-shrink: 0;
+
+scroll-snap-align: center;
+}
+
+
+scroll-padding-inline-start: max(20px, 50% - var(--content-width) / 2);
+hvis man skriver start i stedet for center, den skal være under padding-inline
+*/
+
+ 
 </style>
